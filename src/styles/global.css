@@ -5,6 +5,8 @@
     --default-font-family: 'Poppins', 'sans-serif';
     --font-sans: 'Poppins', 'sans-serif';
 
+    --max-width-screen-lg: 1240px;
+
     --color-bg: rgb(0, 0, 14);
     --color-text: #fff;
     --color-primary: #f8994f;
@@ -30,11 +32,15 @@
     }
 
     h4 {
-        @apply text-xl md:text-2xl lg:text-3xl font-semibold;
+        @apply text-xl lg:text-xl font-semibold;
     }
 
     p {
         @apply text-base font-light leading-6 lg:leading-8;
+    }
+
+    .container {
+        @apply px-5 mx-auto overflow-hidden;
     }
 }
 

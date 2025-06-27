@@ -1,0 +1,50 @@
+---
+const points = [
+    {
+        img: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
+        title: 'Cutting edge editing skills',
+        desc: "It isn't just about creating polished content—it's about pushing boundaries, experimenting, and developing a style that turns heads and opens doors to exciting opportunities.",
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80',
+        title: 'Starting a creator brand',
+        desc: 'Building a creator brand begins with creating outstanding content, sharing your work, and refining your approach to develop a signature style that defines your brand.',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
+        title: 'Connecting with like minded creators & brands',
+        desc: "Connecting with like-minded creators inspires new ideas, fosters collaboration, and creates opportunities you wouldn't find alone. Connecting with Brands for collaboration and unique Partnerships.",
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
+        title: "You don't need 100k+ followers",
+        desc: "I always thought I needed hundreds of thousands of followers to get recognized. But even with 'just' 20,000 followers, building my presence attracted major brands I always wanted to work with.",
+    },
+];
+---
+
+<div class='flex flex-col gap-6 items-stretch'>
+    {
+        points.map(({ img, title, desc }, index) => (
+            <div class='flex flex-col px-0 gap-10 sm:px-20 sm:flex-row h-[567px] items-center bg-white/10 border border-white/10 rounded-2xl p-0 shadow-sm backdrop-blur-xl overflow-hidden'>
+                <div class='w-full overflow-hidden flex justify-center items-center sm:w-1/2 h-40 sm:h-full flex-shrink-0'>
+                    <img
+                        src={img}
+                        alt={title}
+                        class='object-cover w-full h-auto rounded-md'
+                        loading='lazy'
+                    />
+                </div>
+                <div class='w-full sm:w-1/2 flex flex-col justify-center items-center sm:items-start p-6 h-full gap-4'>
+                    <div class='w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white text-xl font-bold mb-3 border border-white/20'>
+                        {String(index + 1).padStart(2, '0')}
+                    </div>
+                    <h3 class='text-left'>{title}</h3>
+                    <p class='text-white/80 text-center sm:text-left leading-6'>
+                        {desc}
+                    </p>
+                </div>
+            </div>
+        ))
+    }
+</div>

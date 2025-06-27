@@ -1,0 +1,32 @@
+---
+import CTAButton from './CTAButton.astro';
+import PointsList from './PointsList.astro';
+---
+
+<section
+    class='w-full py-14 bg-[radial-gradient(ellipse_at_center,_rgba(40,40,80,0.7)_0%,_rgba(0,0,14,1)_100%)]'
+>
+    <div class='container max-w-screen-xl mx-auto px-4 text-center'>
+        <h2 class='mb-6 text-white'>
+            Are you tired of being overlooked as a creator?
+        </h2>
+        <p class='text-white/80 mb-4'>
+            You've spent countless hours creating content, yet the views and
+            engagement don't reflect the effort and talent you've put in.
+            Clients scroll past your profile, unaware of the unique skills and
+            vision you bring. Still your clients compare you with 10 other
+            candidates?
+        </p>
+        <p class='text-white/90 italic font-medium mb-6'>
+            Let me tell you something: I've been there too.
+        </p>
+        <h3 class='mb-8'>
+            But once I understood these four things, everything changed:
+        </h3>
+        <PointsList />
+
+        <div class='mt-10 flex justify-center'>
+            <CTAButton>Start Creating Now!</CTAButton>
+        </div>
+    </div>
+</section>

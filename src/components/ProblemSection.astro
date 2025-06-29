@@ -1,32 +1,59 @@
 ---
-import CTAButton from './CTAButton.astro';
-import PointsList from './PointsList.astro';
+const problems = [
+    {
+        icon: `<img src=\"https://creators-club.com/wp-content/uploads/circle-xmark-sharp-solid-1.svg\" alt=\"Red X\" class=\"w-10 h-10 mb-3\" />`,
+        title: 'Lack of direction',
+        desc: `The internet is flooded with tutorials, but piecing them together into a cohesive path can feel overwhelming. Without a clear roadmap, you risk wasting years chasing trends.`,
+    },
+    {
+        icon: `<img src=\"https://creators-club.com/wp-content/uploads/circle-xmark-sharp-solid-1.svg\" alt=\"Red X\" class=\"w-10 h-10 mb-3\" />`,
+        title: 'Struggling to find clients',
+        desc: `One of the biggest challenges as a creator isn't just finding clients—it's finding the right ones who value your unique style. Traditional outreach often feels like an endless grind, with cold emails ignored and freelancing platforms driving prices down.`,
+    },
+    {
+        icon: `<img src=\"https://creators-club.com/wp-content/uploads/circle-xmark-sharp-solid-1.svg\" alt=\"Red X\" class=\"w-10 h-10 mb-3\" />`,
+        title: 'Portfolio gaps',
+        desc: `You don't have an outstanding and recognized Portfolio/Profile. But Brands want to see a unique editing style with a clear sense of recognition. They want their product to be shown in modern and professional visuals.`,
+    },
+];
 ---
 
-<section
-    class='w-full py-14 bg-[radial-gradient(ellipse_at_center,_rgba(40,40,80,0.7)_0%,_rgba(0,0,14,1)_100%)]'
->
-    <div class='container max-w-screen-xl mx-auto px-4 text-center'>
-        <h2 class='mb-6 text-white'>
-            Are you tired of being overlooked as a creator?
-        </h2>
-        <p class='text-white/80 mb-4'>
-            You've spent countless hours creating content, yet the views and
-            engagement don't reflect the effort and talent you've put in.
-            Clients scroll past your profile, unaware of the unique skills and
-            vision you bring. Still your clients compare you with 10 other
-            candidates?
-        </p>
-        <p class='text-white/90 italic font-medium mb-6'>
-            Let me tell you something: I've been there too.
-        </p>
-        <h3 class='mb-8'>
-            But once I understood these four things, everything changed:
-        </h3>
-        <PointsList />
-
-        <div class='mt-10 flex justify-center'>
-            <CTAButton>Start Creating Now!</CTAButton>
+<section class='w-full py-24 relative overflow-hidden'>
+    <div class='absolute inset-0 pointer-events-none z-0 flex justify-center'>
+        <div
+            class='w-full h-full opacity-40 bg-[repeating-linear-gradient(0deg,_rgba(255,255,255,0.10)_0,_rgba(255,255,255,0.10)_2px,_transparent_2px,_transparent_128px),repeating-linear-gradient(90deg,_rgba(255,255,255,0.10)_0,_rgba(255,255,255,0.10)_2px,_transparent_2px,_transparent_128px)]'
+        >
         </div>
+    </div>
+    <div
+        class='container max-w-screen-xl mx-auto px-4 text-center relative z-10'
+    >
+        <h2 class='mb-8'>The problem why you're struggling</h2>
+        <p class='mb-6 mx-auto max-w-3xl'>
+            The creator economy is a thrilling but chaotic space. Every day,
+            thousands of new voices join the conversation. Standing out requires
+            more than talent—it demands focus, clarity and a strategy that sets
+            you apart. Most creators face obstacles like:
+        </p>
+        <div class='grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 text-left'>
+            {
+                problems.map(p => (
+                    <div class='bg-[#181e2a]/90 border border-white/10 rounded-2xl p-7 flex flex-col shadow-sm gap-y-3'>
+                        <span set:html={p.icon} />
+                        <h4 class='font-semibold mb-2 text-xl'>{p.title}</h4>
+                        <p class='text-white/80'>{p.desc}</p>
+                    </div>
+                ))
+            }
+        </div>
+        <div class='mt-10 flex justify-center'>
+            <a
+                href='#'
+                class='px-10 py-5 flex font-light items-center justify-center rounded-md w-[275px] lg:w-[467px] bg-primary text-white text-base lg:text-xl border-2 border-primary shadow-lg mb-10 tracking-wide transition-all duration-150 hover:bg-white hover:text-primary hover:border-primary hover:scale-105'
+            >
+                Start Creating Now!
+            </a>
+        </div>
+        <div class='text-white/60 text-sm mt-2'>+ 1.500 Members</div>
     </div>
 </section>

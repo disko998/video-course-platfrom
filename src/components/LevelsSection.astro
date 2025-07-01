@@ -1,0 +1,94 @@
+---
+const levels = [
+    {
+        video: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        title: 'For Beginners',
+        desc: "You'll get a clear, step-by-step guide that breaks down the overwhelming world of editing into manageable, actionable steps. With a focus on exactly what you need, you'll build confidence and master essential skills without ever feeling lost or intimidated.",
+    },
+    {
+        video: 'https://www.w3schools.com/html/movie.mp4',
+        title: 'For Intermediates',
+        desc: 'Learn advanced workflows that simplify even the most complex editing tasks, refine your unique style to make it truly stand out, and build a Creator Brand to position yourself as a top-notch creator in your field, ready to attract high-paying opportunities.',
+    },
+    {
+        video: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        title: 'For Advanced',
+        desc: 'Push your limits with modern techniques like Augmented Reality Editing Style, highly requested Car edits and Talking Head Animation Edits. Master cutting-edge techniques to stay',
+    },
+];
+---
+
+<section class='w-full py-24 bg-transparent'>
+    <div class='container max-w-screen-lg mx-auto px-4'>
+        <h2 class='mb-16 text-3xl md:text-4xl font-bold text-center'>
+            No matter where you are, the Creators Club meets you there and helps
+            you rise higher.
+        </h2>
+        <div class='relative'>
+            <!-- Vertical line for desktop -->
+            <div
+                class='hidden md:block absolute top-6 bottom-6 left-1/2 -translate-x-1/2 w-0.5 bg-white/20'
+            >
+            </div>
+
+            <div class='relative flex flex-col gap-y-16'>
+                {
+                    levels.map((level, idx) => {
+                        const isEven = idx % 2 === 0;
+
+                        const ContentBlock = (
+                            <div class='w-full max-w-md bg-white/5 border border-white/10 rounded-2xl p-6 shadow-md text-center md:text-left'>
+                                <h3 class='text-xl md:text-2xl font-semibold mb-2 text-primary'>
+                                    {level.title}
+                                </h3>
+                                <p class='text-white/80'>{level.desc}</p>
+                            </div>
+                        );
+                        const VideoBlock = (
+                            <div class='w-full max-w-md'>
+                                <video
+                                    src={level.video}
+                                    controls
+                                    class='w-full h-40 rounded-xl shadow-lg object-cover border border-white/10'
+                                />
+                            </div>
+                        );
+
+                        const LeftContent = isEven ? VideoBlock : ContentBlock;
+                        const RightContent = isEven ? ContentBlock : VideoBlock;
+
+                        return (
+                            <div class='flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-4'>
+                                {/* Right Column (Rendered first for odd rows on desktop) */}
+                                <div class='w-full md:w-5/12 flex justify-center md:justify-start'>
+                                    {RightContent}
+                                </div>
+                                {/* Stepper Node */}
+                                <div class='relative flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-full bg-primary text-white text-2xl font-bold border-4 border-white/20 shadow-lg z-10 bg-bg order-first md:order-none'>
+                                    {idx + 1}
+                                    {/* Vertical line for mobile */}
+                                    {idx < levels.length - 1 && (
+                                        <div class='md:hidden absolute top-full mt-2 w-0.5 h-12 bg-white/20' />
+                                    )}
+                                </div>
+                                {/* Left Column (Rendered second for odd rows on desktop) */}
+                                <div class='w-full md:w-5/12 flex justify-center md:justify-end'>
+                                    {LeftContent}
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .flex-col > .md\:order-2 {
+        order: -1;
+    }
+    .flex-col > * {
+        order: 99;
+    }
+</style>

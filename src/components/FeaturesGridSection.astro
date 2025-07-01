@@ -1,0 +1,79 @@
+---
+import CTAButton from './CTAButton.astro';
+const features = [
+    {
+        icon: '🎬',
+        title: '60+ hours in depth editing tutorials',
+        desc: 'Master Premiere Pro and After Effects, from beginner to pro level. Create outstanding Shortform Content!',
+    },
+    {
+        icon: '🧑‍🏫',
+        title: 'Feedback by Keanu',
+        desc: 'Keanu personally answers your questions, providing detailed feedback in the feed and private DMs.',
+    },
+    {
+        icon: '📱',
+        title: 'Social Media',
+        desc: 'Learn how to think like a professional, build your creator brand, and start working with your dream brands.',
+    },
+    {
+        icon: '📦',
+        title: 'RAW + project files',
+        desc: 'We provide you with the Videofiles + projects files to many of our in-depth Tutorials.',
+    },
+    {
+        icon: '🖼️',
+        title: 'Craft a standout portfolio',
+        desc: 'Showcase your unique skills to set yourself apart and land clients.',
+    },
+    {
+        icon: '🤗',
+        title: 'Supportive community',
+        desc: 'Join a thriving community of creators who support and uplift each other.',
+    },
+    {
+        icon: '🛡️',
+        title: 'Stay future proof',
+        desc: 'Learn how to navigate the ever-changing creative industry with confidence.',
+    },
+    {
+        icon: '🔄',
+        title: 'Regular updates',
+        desc: 'New modules added on a consistent basis to keep you ahead. Our Creators actively decide which Tutorials comes next.',
+    },
+];
+---
+
+<section class='w-full py-24 relative overflow-hidden'>
+    <div class='absolute inset-0 pointer-events-none z-0 flex justify-center'>
+        <div
+            class='w-full h-full opacity-40 bg-[repeating-linear-gradient(0deg,_rgba(255,255,255,0.18)_0,_rgba(255,255,255,0.18)_2px,_transparent_2px,_transparent_128px),repeating-linear-gradient(90deg,_rgba(255,255,255,0.18)_0,_rgba(255,255,255,0.18)_2px,_transparent_2px,_transparent_128px)]'
+        >
+        </div>
+    </div>
+    <div class='container max-w-screen-xl mx-auto px-4 relative z-10'>
+        <h2 class='mb-4 text-3xl md:text-4xl font-bold text-center'>
+            What you'll get
+        </h2>
+        <p class='mb-10 text-white/80 text-lg text-center max-w-2xl mx-auto'>
+            With carefully structured content, the Creators Club ensures you
+            gain the tools, techniques, and strategies needed to excel.
+        </p>
+        <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
+            {
+                features.map(f => (
+                    <div class='bg-[#181e2a]/90 border border-white/10 rounded-2xl p-8 flex flex-col items-start shadow-lg'>
+                        <span class='text-4xl mb-4'>{f.icon}</span>
+                        <div class='font-semibold text-white mb-1'>
+                            {f.title}
+                        </div>
+                        <div class='text-white/70'>{f.desc}</div>
+                    </div>
+                ))
+            }
+        </div>
+        <div class='flex justify-center mt-12'>
+            <CTAButton href='#'>Join the Creators Club Now</CTAButton>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,220 @@
+---
+const faqs = [
+    {
+        question: 'What exactly do I get with the Creators Club membership?',
+        answer: 'You get 70+ hours of in-depth video editing tutorials, access to our global creative community, exclusive live sessions with Keanu, downloadable project files and footage, monthly Q&A calls, and lifetime access to all current and future content updates.',
+    },
+    {
+        question: "I'm a complete beginner. Is this suitable for me?",
+        answer: "Absolutely! Our content is structured for all skill levels. We start with beginner-friendly tutorials that teach you the fundamentals, then progressively advance to professional techniques. You'll never feel lost or overwhelmed.",
+    },
+    {
+        question: 'What software do I need to follow along?',
+        answer: 'The tutorials primarily focus on Adobe Premiere Pro and After Effects. While we recommend these industry-standard tools, many techniques can be adapted to other editing software. We also provide guidance on getting started with these programs.',
+    },
+    {
+        question: 'How is this different from YouTube tutorials?',
+        answer: 'Unlike scattered YouTube content, our curriculum is structured and progressive. You get personalized feedback from Keanu, access to exclusive techniques not shared publicly, project files to practice with, and a supportive community of creators at your level.',
+    },
+    {
+        question: "What if I don't see results?",
+        answer: "We offer a 14-day money-back guarantee. If you're not satisfied with the content or don't see the value, we'll refund your purchase completely. We're confident in the quality and effectiveness of our program.",
+    },
+    {
+        question: 'How long does it take to see improvement in my editing?',
+        answer: 'Most members see noticeable improvement within 2-4 weeks of consistent practice. However, building a successful creator brand typically takes 3-6 months of dedicated effort. We provide clear milestones to track your progress.',
+    },
+    {
+        question: 'Do you provide feedback on my work?',
+        answer: 'Yes! Keanu personally reviews and provides feedback on member submissions. You can share your work in our community for feedback from both Keanu and fellow creators. This personalized guidance is what sets us apart.',
+    },
+    {
+        question:
+            'Is the payment plan really the same content as the lifetime deal?',
+        answer: 'Yes, both options give you identical access to all content, community features, and future updates. The only difference is the payment structure - you can choose what works best for your budget.',
+    },
+    {
+        question: 'How often is new content added?',
+        answer: 'We add new tutorials and content regularly based on member requests and industry trends. On average, expect 2-3 new tutorials per month, plus exclusive live sessions and community challenges.',
+    },
+    {
+        question: 'Can I cancel my payment plan anytime?',
+        answer: 'The payment plan consists of 4 fixed payments that give you lifetime access. Once you complete the payments, you own the access permanently. If you need to modify your payment schedule, contact our support team.',
+    },
+];
+---
+
+<section class='w-full py-24 relative overflow-hidden'>
+    <!-- Background elements -->
+    <div
+        class='absolute inset-0 bg-gradient-to-br from-[#181e2a]/20 via-transparent to-[#232946]/20 pointer-events-none'
+    >
+    </div>
+    <div
+        class='absolute top-1/4 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl'
+    >
+    </div>
+    <div
+        class='absolute bottom-1/4 right-1/3 w-80 h-80 bg-accent/5 rounded-full blur-3xl'
+    >
+    </div>
+
+    <div class='container max-w-screen-xl mx-auto px-4 relative z-10'>
+        <div class='text-center mb-16'>
+            <h2 class='mb-6 text-3xl md:text-4xl font-bold'>
+                Frequently Asked Questions
+            </h2>
+            <p class='text-white/70 text-lg max-w-2xl mx-auto'>
+                Got questions? We've got answers. Here are the most common
+                questions about joining the Creators Club.
+            </p>
+        </div>
+
+        <div class='max-w-4xl mx-auto'>
+            <div class='space-y-4'>
+                {
+                    faqs.map((faq, idx) => (
+                        <div class='group bg-gradient-to-r from-[#181e2a]/90 to-[#1a1f2e]/90 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300'>
+                            <button
+                                class='w-full text-left p-6 md:p-8 focus:outline-none  focus:ring-inset'
+                                onclick={`toggleFAQ(${idx})`}
+                            >
+                                <div class='flex items-center justify-between'>
+                                    <h3 class='text-lg md:text-xl font-semibold text-white group-hover:text-primary transition-colors pr-4'>
+                                        {faq.question}
+                                    </h3>
+                                    <div class='flex-shrink-0'>
+                                        <div
+                                            class={`w-8 h-8 flex items-center justify-center text-white transition-all duration-300 faq-icon-${idx}`}
+                                        >
+                                            <svg
+                                                class='w-6 h-6'
+                                                fill='none'
+                                                stroke='currentColor'
+                                                viewBox='0 0 24 24'
+                                            >
+                                                <path
+                                                    stroke-linecap='round'
+                                                    stroke-linejoin='round'
+                                                    stroke-width='1.5'
+                                                    d='M12 6v12m6-6H6'
+                                                />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                            <div
+                                class={`overflow-hidden transition-all duration-300 ease-in-out faq-content-${idx}`}
+                                style='max-height: 0;'
+                            >
+                                <div class='px-6 md:px-8 pb-6 md:pb-8'>
+                                    <div class='h-px bg-white/10 mb-4' />
+                                    <p class='text-white/80 leading-relaxed'>
+                                        {faq.answer}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class='mt-16 text-center'>
+            <div
+                class='bg-gradient-to-r from-[#181e2a]/95 to-[#232946]/95 border border-white/10 rounded-3xl p-8 md:p-12 max-w-3xl mx-auto relative overflow-hidden'
+            >
+                {/* Decorative elements */}
+                <div
+                    class='absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl'
+                >
+                </div>
+                <div
+                    class='absolute bottom-0 left-0 w-28 h-28 bg-accent/10 rounded-full blur-xl'
+                >
+                </div>
+
+                <div class='relative z-10'>
+                    <h3 class='text-2xl md:text-3xl font-bold text-white mb-4'>
+                        Still have questions?
+                    </h3>
+                    <p class='text-white/70 text-lg mb-8'>
+                        Our support team is here to help. Get in touch and we'll
+                        answer any questions you have about the Creators Club.
+                    </p>
+
+                    <div
+                        class='flex flex-col sm:flex-row items-center justify-center gap-4'
+                    >
+                        <a
+                            href='mailto:support@creatorsclub.com'
+                            class='inline-block bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
+                        >
+                            Contact Support
+                        </a>
+                        <a
+                            href='#pricing'
+                            class='inline-block border border-white/20 text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-white/10 transition-all duration-300'
+                        >
+                            View Pricing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function toggleFAQ(index: number): void {
+        const content = document.querySelector(
+            `.faq-content-${index}`,
+        ) as HTMLElement;
+        const icon = document.querySelector(
+            `.faq-icon-${index}`,
+        ) as HTMLElement;
+        const svg = icon?.querySelector('svg') as SVGElement;
+
+        if (content && icon && svg) {
+            const isOpen =
+                content.style.maxHeight && content.style.maxHeight !== '0px';
+
+            if (isOpen) {
+                content.style.maxHeight = '0';
+                svg.innerHTML =
+                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v12m6-6H6"/>';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                svg.innerHTML =
+                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 6h12"/>';
+            }
+        }
+    }
+
+    // Declare global function type
+    declare global {
+        interface Window {
+            toggleFAQ: (index: number) => void;
+        }
+    }
+
+    // Make toggleFAQ globally available
+    window.toggleFAQ = toggleFAQ;
+</script>
+
+<style>
+    .faq-content-0,
+    .faq-content-1,
+    .faq-content-2,
+    .faq-content-3,
+    .faq-content-4,
+    .faq-content-5,
+    .faq-content-6,
+    .faq-content-7,
+    .faq-content-8,
+    .faq-content-9 {
+        transition: max-height 0.3s ease-in-out;
+    }
+</style>

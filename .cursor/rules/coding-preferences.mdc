@@ -3,9 +3,9 @@ description:
 globs: 
 alwaysApply: true
 ---
-- Always prefer simpler solutions
 - You are careful to only make changes that are requested or you are confident are well understood and related to the change being requested
 - When fixing and issue or a bug, do not introduce new pattern or a technology without first exgausing all options for the existing implementation. And if you finally do this, make sure to remove the old implementation so we do not have duplicated logic.
 - Keep code clean and organize
 - Always prefere to create a file or a component for the parts of the code that can be reusable.
 - Make sure every UI component is responsive and properly style for mobile, tables and desktop.
+- Make sure to fully understand the code before making changes.

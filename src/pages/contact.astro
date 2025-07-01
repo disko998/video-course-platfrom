@@ -1,0 +1,456 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Contact Us - Creators Club'>
+    <main
+        class='min-h-screen bg-gradient-to-br from-[#0a0a0f] via-[#1a1f2e] to-[#0f1419] py-24'
+    >
+        <!-- Subtle Background Elements -->
+        <div class='absolute inset-0 opacity-10'>
+            <div
+                class='absolute top-32 left-32 w-64 h-64 bg-white/5 rounded-full blur-3xl'
+            >
+            </div>
+            <div
+                class='absolute bottom-32 right-32 w-48 h-48 bg-white/3 rounded-full blur-3xl'
+            >
+            </div>
+        </div>
+
+        <div class='container max-w-6xl mx-auto px-4 relative z-10'>
+            <div
+                class='bg-gradient-to-br from-[#181e2a]/90 to-[#1a1f2e]/90 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl backdrop-blur-sm'
+            >
+                <!-- Header -->
+                <div class='text-center mb-12'>
+                    <h1 class='text-3xl md:text-4xl font-bold text-white mb-4'>
+                        Get in Touch
+                    </h1>
+                    <p class='text-white/70 text-lg max-w-2xl mx-auto'>
+                        Have questions about Creators Club? Need support? We're
+                        here to help. Send us a message and we'll get back to
+                        you within 24 hours.
+                    </p>
+                </div>
+
+                <div class='grid grid-cols-1 lg:grid-cols-2 gap-12'>
+                    <!-- Contact Form -->
+                    <div>
+                        <!-- Success Message -->
+                        <div
+                            id='success-message'
+                            class='hidden mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg'
+                        >
+                            <div class='flex items-center'>
+                                <svg
+                                    class='w-5 h-5 text-green-400 mr-3'
+                                    fill='currentColor'
+                                    viewBox='0 0 20 20'
+                                >
+                                    <path
+                                        fill-rule='evenodd'
+                                        d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
+                                        clip-rule='evenodd'></path>
+                                </svg>
+                                <div>
+                                    <h4 class='text-green-400 font-medium'>
+                                        Message Sent Successfully!
+                                    </h4>
+                                    <p class='text-green-300/80 text-sm mt-1'>
+                                        Thank you for contacting us. We'll get
+                                        back to you within 24 hours.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id='contact-form' class='space-y-6'>
+                            <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                                <div>
+                                    <label
+                                        for='first-name'
+                                        class='block text-sm font-medium text-white mb-2'
+                                    >
+                                        First Name *
+                                    </label>
+                                    <input
+                                        type='text'
+                                        id='first-name'
+                                        name='first-name'
+                                        required
+                                        class='w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-colors'
+                                        placeholder='John'
+                                    />
+                                </div>
+
+                                <div>
+                                    <label
+                                        for='last-name'
+                                        class='block text-sm font-medium text-white mb-2'
+                                    >
+                                        Last Name *
+                                    </label>
+                                    <input
+                                        type='text'
+                                        id='last-name'
+                                        name='last-name'
+                                        required
+                                        class='w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-colors'
+                                        placeholder='Doe'
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label
+                                    for='email'
+                                    class='block text-sm font-medium text-white mb-2'
+                                >
+                                    Email Address *
+                                </label>
+                                <input
+                                    type='email'
+                                    id='email'
+                                    name='email'
+                                    required
+                                    class='w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-colors'
+                                    placeholder='john@example.com'
+                                />
+                            </div>
+
+                            <div>
+                                <label
+                                    for='subject'
+                                    class='block text-sm font-medium text-white mb-2'
+                                >
+                                    Subject *
+                                </label>
+                                <select
+                                    id='subject'
+                                    name='subject'
+                                    required
+                                    class='w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-colors'
+                                >
+                                    <option value='' class='bg-gray-800'
+                                        >Select a subject</option
+                                    >
+                                    <option value='general' class='bg-gray-800'
+                                        >General Inquiry</option
+                                    >
+                                    <option value='support' class='bg-gray-800'
+                                        >Technical Support</option
+                                    >
+                                    <option value='billing' class='bg-gray-800'
+                                        >Billing Question</option
+                                    >
+                                    <option value='refund' class='bg-gray-800'
+                                        >Refund Request</option
+                                    >
+                                    <option
+                                        value='partnership'
+                                        class='bg-gray-800'
+                                        >Partnership Opportunity</option
+                                    >
+                                    <option value='feedback' class='bg-gray-800'
+                                        >Feedback</option
+                                    >
+                                    <option value='other' class='bg-gray-800'
+                                        >Other</option
+                                    >
+                                </select>
+                            </div>
+
+                            <div>
+                                <label
+                                    for='message'
+                                    class='block text-sm font-medium text-white mb-2'
+                                >
+                                    Message *
+                                </label>
+                                <textarea
+                                    id='message'
+                                    name='message'
+                                    required
+                                    rows='6'
+                                    class='w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-colors resize-vertical'
+                                    placeholder='Tell us how we can help you...'
+                                ></textarea>
+                            </div>
+
+                            <div class='flex items-start'>
+                                <input
+                                    id='newsletter'
+                                    name='newsletter'
+                                    type='checkbox'
+                                    class='h-4 w-4 text-orange-500 focus:ring-orange-500 border-white/20 rounded bg-white/10 mt-1'
+                                />
+                                <label
+                                    for='newsletter'
+                                    class='ml-3 block text-sm text-white/70'
+                                >
+                                    I'd like to receive updates about new
+                                    tutorials and features
+                                </label>
+                            </div>
+
+                            <div>
+                                <button
+                                    type='submit'
+                                    id='submit-button'
+                                    class='group relative inline-flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold text-lg rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none'
+                                >
+                                    <div
+                                        class='absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+                                    >
+                                    </div>
+                                    <span class='relative flex items-center'>
+                                        <span id='button-text'
+                                            >Send Message</span
+                                        >
+                                        <svg
+                                            id='button-icon'
+                                            class='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300'
+                                            fill='currentColor'
+                                            viewBox='0 0 20 20'
+                                        >
+                                            <path
+                                                d='M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z'
+                                            ></path>
+                                        </svg>
+                                        <!-- Loading spinner (hidden by default) -->
+                                        <svg
+                                            id='loading-spinner'
+                                            class='hidden w-5 h-5 ml-2 animate-spin'
+                                            fill='none'
+                                            viewBox='0 0 24 24'
+                                        >
+                                            <circle
+                                                class='opacity-25'
+                                                cx='12'
+                                                cy='12'
+                                                r='10'
+                                                stroke='currentColor'
+                                                stroke-width='4'></circle>
+                                            <path
+                                                class='opacity-75'
+                                                fill='currentColor'
+                                                d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+                                            ></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class='space-y-8'>
+                        <div>
+                            <h3 class='text-2xl font-semibold text-white mb-6'>
+                                Other Ways to Reach Us
+                            </h3>
+
+                            <div class='space-y-6'>
+                                <div class='flex items-start space-x-4'>
+                                    <div
+                                        class='w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0'
+                                    >
+                                        <svg
+                                            class='w-5 h-5 text-orange-400'
+                                            fill='currentColor'
+                                            viewBox='0 0 20 20'
+                                        >
+                                            <path
+                                                d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z'
+                                            ></path>
+                                            <path
+                                                d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z'
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class='text-white font-medium mb-1'>
+                                            Email Support
+                                        </h4>
+                                        <p class='text-white/70 mb-2'>
+                                            Get help with your account or
+                                            courses
+                                        </p>
+                                        <a
+                                            href='mailto:support@creatorsclub.com'
+                                            class='text-orange-400 hover:text-yellow-400 transition-colors'
+                                        >
+                                            support@creatorsclub.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class='flex items-start space-x-4'>
+                                    <div
+                                        class='w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0'
+                                    >
+                                        <svg
+                                            class='w-5 h-5 text-orange-400'
+                                            fill='currentColor'
+                                            viewBox='0 0 20 20'
+                                        >
+                                            <path
+                                                fill-rule='evenodd'
+                                                d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z'
+                                                clip-rule='evenodd'></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class='text-white font-medium mb-1'>
+                                            Community Support
+                                        </h4>
+                                        <p class='text-white/70 mb-2'>
+                                            Join our Discord community for peer
+                                            support
+                                        </p>
+                                        <a
+                                            href='https://discord.gg/creatorsclub'
+                                            class='text-orange-400 hover:text-yellow-400 transition-colors'
+                                        >
+                                            Join Discord
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class='flex items-start space-x-4'>
+                                    <div
+                                        class='w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0'
+                                    >
+                                        <svg
+                                            class='w-5 h-5 text-orange-400'
+                                            fill='currentColor'
+                                            viewBox='0 0 20 20'
+                                        >
+                                            <path
+                                                fill-rule='evenodd'
+                                                d='M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z'
+                                                clip-rule='evenodd'></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class='text-white font-medium mb-1'>
+                                            Live Chat
+                                        </h4>
+                                        <p class='text-white/70 mb-2'>
+                                            Available Monday-Friday, 9 AM - 6 PM
+                                            EST
+                                        </p>
+                                        <button
+                                            class='text-orange-400 hover:text-yellow-400 transition-colors'
+                                        >
+                                            Start Live Chat
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='pt-8 border-t border-white/10'>
+                            <h4 class='text-white font-medium mb-4'>
+                                Response Times
+                            </h4>
+                            <div class='space-y-3 text-sm'>
+                                <div class='flex justify-between'>
+                                    <span class='text-white/70'
+                                        >General Inquiries</span
+                                    >
+                                    <span class='text-white'
+                                        >Within 24 hours</span
+                                    >
+                                </div>
+                                <div class='flex justify-between'>
+                                    <span class='text-white/70'
+                                        >Technical Support</span
+                                    >
+                                    <span class='text-white'
+                                        >Within 12 hours</span
+                                    >
+                                </div>
+                                <div class='flex justify-between'>
+                                    <span class='text-white/70'
+                                        >Billing Issues</span
+                                    >
+                                    <span class='text-white'
+                                        >Within 6 hours</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back to Home -->
+                <div class='mt-12 pt-8 border-t border-white/10 text-center'>
+                    <a
+                        href='/'
+                        class='text-orange-400 hover:text-yellow-400 transition-colors'
+                    >
+                        ← Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contact-form');
+        const submitButton = document.getElementById('submit-button');
+        const buttonText = document.getElementById('button-text');
+        const buttonIcon = document.getElementById('button-icon');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const successMessage = document.getElementById('success-message');
+
+        if (
+            form &&
+            submitButton &&
+            buttonText &&
+            buttonIcon &&
+            loadingSpinner &&
+            successMessage
+        ) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Disable button and show loading state
+                (submitButton as HTMLButtonElement).disabled = true;
+                buttonText.textContent = 'Sending...';
+                buttonIcon.classList.add('hidden');
+                loadingSpinner.classList.remove('hidden');
+
+                // Simulate API call with a delay
+                setTimeout(() => {
+                    // Reset form
+                    (form as HTMLFormElement).reset();
+
+                    // Show success message
+                    successMessage.classList.remove('hidden');
+
+                    // Reset button state
+                    (submitButton as HTMLButtonElement).disabled = false;
+                    buttonText.textContent = 'Send Message';
+                    buttonIcon.classList.remove('hidden');
+                    loadingSpinner.classList.add('hidden');
+
+                    // Scroll to success message
+                    successMessage.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                    });
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 5000);
+                }, 2000); // 2 second delay to simulate network request
+            });
+        }
+    });
+</script>

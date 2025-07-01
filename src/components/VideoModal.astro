@@ -1,0 +1,194 @@
+---
+// VideoModal.astro - Modal component for displaying preview videos
+---
+
+<div
+    id='video-modal'
+    class='fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300'
+    role='dialog'
+    aria-modal='true'
+    aria-labelledby='video-modal-title'
+>
+    <!-- Modal Content -->
+    <div
+        class='relative bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden transform scale-95 transition-transform duration-300'
+    >
+        <!-- Close Button -->
+        <button
+            id='close-modal'
+            class='absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-200 hover:scale-110'
+            aria-label='Close video modal'
+        >
+            <svg
+                class='w-6 h-6'
+                fill='none'
+                stroke='currentColor'
+                viewBox='0 0 24 24'
+            >
+                <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M6 18L18 6M6 6l12 12'></path>
+            </svg>
+        </button>
+
+        <!-- Modal Header -->
+        <div class='p-6 pb-0'>
+            <h2
+                id='video-modal-title'
+                class='text-2xl font-bold text-white mb-2'
+            >
+                Creators Club Preview
+            </h2>
+            <p class='text-white/70 text-sm'>
+                See what's inside our comprehensive video editing course
+            </p>
+        </div>
+
+        <!-- Video Container -->
+        <div class='p-6'>
+            <div
+                class='relative aspect-video bg-black rounded-lg overflow-hidden'
+            >
+                <!-- Placeholder for video - you can replace with actual video URL -->
+                <iframe
+                    id='preview-video'
+                    class='w-full h-full'
+                    src=''
+                    title='Creators Club Preview Video'
+                    frameborder='0'
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                    allowfullscreen
+                    loading='lazy'></iframe>
+
+                <!-- Video Placeholder (shown when no video is loaded) -->
+                <div
+                    id='video-placeholder'
+                    class='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900'
+                >
+                    <div class='text-center'>
+                        <div
+                            class='w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4'
+                        >
+                            <svg
+                                class='w-8 h-8 text-orange-500'
+                                fill='currentColor'
+                                viewBox='0 0 20 20'
+                            >
+                                <path
+                                    fill-rule='evenodd'
+                                    d='M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z'
+                                    clip-rule='evenodd'></path>
+                            </svg>
+                        </div>
+                        <h3 class='text-white font-semibold mb-2'>
+                            Preview Video
+                        </h3>
+                        <p class='text-white/60 text-sm'>
+                            Get a sneak peek of our course content
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class='px-6 pb-6'>
+            <div
+                class='flex flex-col sm:flex-row gap-3 items-center justify-between bg-white/5 rounded-lg p-4'
+            >
+                <div class='text-center sm:text-left'>
+                    <p class='text-white font-medium'>
+                        Ready to start your journey?
+                    </p>
+                    <p class='text-white/60 text-sm'>
+                        Join 2,500+ creators already transforming their content
+                    </p>
+                </div>
+                <a
+                    href='/login'
+                    class='px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-full hover:from-yellow-300 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-orange-500/25 whitespace-nowrap'
+                >
+                    Start Creating Now!
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const modal = document.getElementById('video-modal');
+        const closeBtn = document.getElementById('close-modal');
+        const video = document.getElementById(
+            'preview-video',
+        ) as HTMLIFrameElement;
+        const placeholder = document.getElementById('video-placeholder');
+
+        // Video URL - replace with your actual preview video
+        const videoUrl =
+            'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1';
+
+        function openModal() {
+            if (modal) {
+                // Load video when modal opens
+                if (video && !video.src) {
+                    video.src = videoUrl;
+                    if (placeholder) {
+                        placeholder.style.display = 'none';
+                    }
+                }
+
+                modal.classList.remove('opacity-0', 'invisible');
+                modal.querySelector('.transform')?.classList.remove('scale-95');
+                modal.querySelector('.transform')?.classList.add('scale-100');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            if (modal) {
+                modal.classList.add('opacity-0', 'invisible');
+                modal
+                    .querySelector('.transform')
+                    ?.classList.remove('scale-100');
+                modal.querySelector('.transform')?.classList.add('scale-95');
+                document.body.style.overflow = '';
+
+                // Stop video when modal closes
+                if (video) {
+                    video.src = '';
+                    if (placeholder) {
+                        placeholder.style.display = 'flex';
+                    }
+                }
+            }
+        }
+
+        // Close modal when clicking close button
+        closeBtn?.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside
+        modal?.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (
+                e.key === 'Escape' &&
+                modal &&
+                !modal.classList.contains('invisible')
+            ) {
+                closeModal();
+            }
+        });
+
+        // Make openModal function globally available
+        (window as any).openVideoModal = openModal;
+    });
+</script>
+

@@ -1,5 +1,6 @@
 ---
 import CTAButton from './CTAButton.astro';
+import VideoModal from './VideoModal.astro';
 import logo from '../assets/logo.svg';
 ---
 
@@ -180,7 +181,9 @@ import logo from '../assets/logo.svg';
             <CTAButton href='/login'>Start Creating Now!</CTAButton>
 
             <button
+                id='watch-preview-btn'
                 class='group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105'
+                onclick='openVideoModal()'
             >
                 <span class='flex items-center'>
                     <svg
@@ -226,3 +229,6 @@ import logo from '../assets/logo.svg';
     >
     </div>
 </section>
+
+<!-- Video Modal -->
+<VideoModal />

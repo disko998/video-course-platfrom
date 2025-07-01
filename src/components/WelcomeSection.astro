@@ -1,46 +1,305 @@
 ---
 import CTAButton from './CTAButton.astro';
+
+const features = [
+    {
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+            <path d="M14.828 14.828a4 4 0 0 1-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        title: '60+ Hours of Content',
+        description:
+            'Comprehensive tutorials covering every aspect of video editing',
+    },
+    {
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        title: 'Supportive Community',
+        description:
+            'Connect with fellow creators and get feedback on your work',
+    },
+    {
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        title: 'Regular Updates',
+        description:
+            'Stay current with the latest editing techniques and trends',
+    },
+];
+
+const benefits = [
+    {
+        title: 'Professional Positioning',
+        description:
+            'Learn how to position yourself as a professional in the industry',
+    },
+    {
+        title: 'Brand Building',
+        description:
+            'Build a successful Creator Brand to attract your dream clients',
+    },
+    {
+        title: 'Career Transformation',
+        description:
+            'Transform your passion into a career that fuels creativity and income',
+    },
+];
 ---
 
-<section class='w-full py-20'>
-    <div
-        class='container max-w-screen-xl mx-auto px-4 flex flex-col items-center text-center gap-10'
-    >
-        <h2 class='mb-6'>Welcome to the Creators Club</h2>
-        <p class='mb-8 text-white/80 text-lg'>
-            The Creators Club isn't just a platform; it's your kickstart to
-            becoming a Next-Gen Video Creator. With over 60 hours of the most
-            comprehensive editing tutorials available, a supportive community,
-            and regular updates, you'll gain everything you need to thrive.
-        </p>
-        <img
-            src='https://creators-club.com/wp-content/uploads/mockup-1.png'
-            alt='Creators Club Mockup'
-            class='rw-full object-contain shadow-2xl mb-6'
-        />
-        <CTAButton href='#'>Join the Club Now</CTAButton>
-        <h3 class='mt-12 mb-4'>But it's more than just technical skills.</h3>
-        <p class='text-white/80 text-lg mx-auto mb-2'>
-            It's not only about learning how to create sick edits, but how to
-            position yourself as a professional, and how to build a successful
-            Creator Brand to attract your dream clients. It's also about
-            transforming your passion into a career that fuels your creativity
-            and your income.
-        </p>
-        <p class='text-white/80 text-lg mx-auto mb-2'>
-            This is where your journey changes. With step-by-step guidance,
-            insider knowledge, a supportive community and access to exclusive
-            project files, you'll learn not just how to edit—but how to create
-            sick content that stands out in a crowded marketplace.
-        </p>
-        <p class='text-white/80 text-lg mx-auto'>
-            Dial in your niche, showcase your best work, and leverage short-form
-            content to turn views into business opportunities.
-        </p>
-        <h3 class='mt-12 mb-4'>
-            There is a MASSIVE opportunity for those who learn this skill
-            immediately
-        </h3>
-        <CTAButton href='#'>Join the Creators Club Now</CTAButton>
+<section
+    class='relative w-full py-24 bg-gradient-to-br from-[#0a0a0f] via-[#1a1f2e] to-[#0f1419] overflow-hidden'
+>
+    <!-- Subtle Background Elements -->
+    <div class='absolute inset-0 opacity-10'>
+        <div
+            class='absolute top-32 left-32 w-64 h-64 bg-white/5 rounded-full blur-3xl'
+        >
+        </div>
+        <div
+            class='absolute bottom-32 right-32 w-48 h-48 bg-white/3 rounded-full blur-3xl'
+        >
+        </div>
+    </div>
+
+    <div class='container max-w-screen-xl mx-auto px-4 relative z-10'>
+        <!-- Section Header -->
+        <div class='text-center mb-16'>
+            <div
+                class='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6'
+            >
+                <svg
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    class='w-4 h-4 text-white/70'
+                >
+                    <path
+                        d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'
+                        stroke='currentColor'
+                        stroke-width='2'></path>
+                </svg>
+                <span class='text-white/70 text-sm font-medium'>Welcome</span>
+            </div>
+
+            <h2
+                class='text-3xl md:text-4xl font-bold text-white mb-6 leading-tight'
+            >
+                Welcome to the
+                <span
+                    class='bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent'
+                >
+                    Creators Club
+                </span>
+            </h2>
+
+            <p class='text-white/70 text-lg max-w-3xl mx-auto mb-12'>
+                Your kickstart to becoming a Next-Gen Video Creator. With
+                comprehensive tutorials, a supportive community, and regular
+                updates, you'll gain everything you need to thrive.
+            </p>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class='grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20'>
+            <!-- Left Content -->
+            <div>
+                <!-- Features List -->
+                <div class='space-y-6 mb-12'>
+                    {
+                        features.map(feature => (
+                            <div class='flex items-start gap-4'>
+                                <div class='w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0'>
+                                    <div
+                                        class='text-white/80'
+                                        set:html={feature.icon}
+                                    />
+                                </div>
+                                <div>
+                                    <h3 class='text-white font-semibold mb-2'>
+                                        {feature.title}
+                                    </h3>
+                                    <p class='text-white/70'>
+                                        {feature.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <!-- CTA -->
+                <div class='mb-12'>
+                    <CTAButton href='#pricing'>Join the Club Now</CTAButton>
+                </div>
+            </div>
+
+            <!-- Right Content - Image -->
+            <div class='relative'>
+                <div class='relative rounded-2xl overflow-hidden'>
+                    <img
+                        src='https://creators-club.com/wp-content/uploads/mockup-1.png'
+                        alt='Creators Club Mockup'
+                        class='w-full object-contain shadow-2xl'
+                    />
+                    <!-- Image Overlay -->
+                    <div
+                        class='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent'
+                    >
+                    </div>
+                </div>
+
+                <!-- Floating Badge -->
+                <div
+                    class='absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg'
+                >
+                    60+ Hours
+                </div>
+            </div>
+        </div>
+
+        <!-- Beyond Technical Skills Section -->
+        <div class='mb-20'>
+            <div class='text-center mb-12'>
+                <h3 class='text-2xl md:text-3xl font-bold text-white mb-4'>
+                    More Than Just Technical Skills
+                </h3>
+                <p class='text-white/70 text-lg max-w-3xl mx-auto'>
+                    Learn not only how to create sick edits, but how to position
+                    yourself as a professional and build a successful Creator
+                    Brand to attract your dream clients.
+                </p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
+                {
+                    benefits.map(benefit => (
+                        <div class='text-center'>
+                            <div class='bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-all duration-300'>
+                                <h4 class='text-white font-semibold mb-3'>
+                                    {benefit.title}
+                                </h4>
+                                <p class='text-white/70'>
+                                    {benefit.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <!-- Additional Content -->
+            <div
+                class='bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mb-12'
+            >
+                <div class='max-w-4xl mx-auto space-y-6'>
+                    <p class='text-white/80 text-lg leading-relaxed'>
+                        This is where your journey changes. With step-by-step
+                        guidance, insider knowledge, a supportive community and
+                        access to exclusive project files, you'll learn not just
+                        how to edit—but how to create sick content that stands
+                        out in a crowded marketplace.
+                    </p>
+                    <p class='text-white/80 text-lg leading-relaxed'>
+                        Dial in your niche, showcase your best work, and
+                        leverage short-form content to turn views into business
+                        opportunities.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Opportunity Section -->
+        <div class='text-center'>
+            <div
+                class='bg-gradient-to-r from-orange-500/10 to-yellow-500/10 border border-orange-400/20 rounded-2xl p-8 mb-8'
+            >
+                <h3 class='text-2xl md:text-3xl font-bold text-white mb-4'>
+                    There's a
+                    <span
+                        class='bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent'
+                    >
+                        MASSIVE Opportunity
+                    </span>
+                </h3>
+                <p class='text-white/80 text-lg mb-8 max-w-2xl mx-auto'>
+                    For those who learn this skill immediately. The demand for
+                    skilled video editors has never been higher, and the market
+                    is ripe for creators who know how to stand out.
+                </p>
+
+                <!-- Final CTA -->
+                <CTAButton href='#pricing'>Join the Creators Club Now</CTAButton
+                >
+            </div>
+
+            <!-- Trust Indicators -->
+            <div
+                class='flex flex-wrap justify-center items-center gap-8 text-white/60'
+            >
+                <div class='flex items-center gap-2'>
+                    <svg
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        class='w-4 h-4 text-green-400'
+                    >
+                        <path
+                            d='M9 12l2 2 4-4'
+                            stroke='currentColor'
+                            stroke-width='2'
+                            stroke-linecap='round'
+                            stroke-linejoin='round'></path>
+                    </svg>
+                    <span class='text-sm'>Instant Access</span>
+                </div>
+                <div class='flex items-center gap-2'>
+                    <svg
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        class='w-4 h-4 text-blue-400'
+                    >
+                        <path
+                            d='M22 11.08V12a10 10 0 1 1-5.93-9.14'
+                            stroke='currentColor'
+                            stroke-width='2'></path>
+                        <polyline
+                            points='22,4 12,14.01 9,11.01'
+                            stroke='currentColor'
+                            stroke-width='2'></polyline>
+                    </svg>
+                    <span class='text-sm'>Lifetime Updates</span>
+                </div>
+                <div class='flex items-center gap-2'>
+                    <svg
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        class='w-4 h-4 text-purple-400'
+                    >
+                        <path
+                            d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'
+                            stroke='currentColor'
+                            stroke-width='2'></path>
+                        <circle
+                            cx='9'
+                            cy='7'
+                            r='4'
+                            stroke='currentColor'
+                            stroke-width='2'></circle>
+                        <path
+                            d='M23 21v-2a4 4 0 0 0-3-3.87'
+                            stroke='currentColor'
+                            stroke-width='2'></path>
+                        <path
+                            d='M16 3.13a4 4 0 0 1 0 7.75'
+                            stroke='currentColor'
+                            stroke-width='2'></path>
+                    </svg>
+                    <span class='text-sm'>Community Access</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

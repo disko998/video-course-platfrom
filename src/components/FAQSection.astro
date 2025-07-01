@@ -1,4 +1,6 @@
 ---
+import CTAButton from './CTAButton.astro';
+
 const faqs = [
     {
         question: 'What exactly do I get with the Creators Club membership?',
@@ -44,19 +46,19 @@ const faqs = [
 ];
 ---
 
-<section class='w-full py-24 relative overflow-hidden'>
-    <!-- Background elements -->
-    <div
-        class='absolute inset-0 bg-gradient-to-br from-[#181e2a]/20 via-transparent to-[#232946]/20 pointer-events-none'
-    >
-    </div>
-    <div
-        class='absolute top-1/4 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl'
-    >
-    </div>
-    <div
-        class='absolute bottom-1/4 right-1/3 w-80 h-80 bg-accent/5 rounded-full blur-3xl'
-    >
+<section
+    class='relative w-full py-24 bg-gradient-to-br from-[#0a0a0f] via-[#1a1f2e] to-[#0f1419] overflow-hidden'
+>
+    <!-- Subtle Background Elements -->
+    <div class='absolute inset-0 opacity-10'>
+        <div
+            class='absolute top-32 left-32 w-64 h-64 bg-white/5 rounded-full blur-3xl'
+        >
+        </div>
+        <div
+            class='absolute bottom-32 right-32 w-48 h-48 bg-white/3 rounded-full blur-3xl'
+        >
+        </div>
     </div>
 
     <div class='container max-w-screen-xl mx-auto px-4 relative z-10'>
@@ -148,15 +150,12 @@ const faqs = [
                     <div
                         class='flex flex-col sm:flex-row items-center justify-center gap-4'
                     >
-                        <a
-                            href='mailto:support@creatorsclub.com'
-                            class='inline-block bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105'
-                        >
+                        <CTAButton href='mailto:support@creatorsclub.com'>
                             Contact Support
-                        </a>
+                        </CTAButton>
                         <a
                             href='#pricing'
-                            class='inline-block border border-white/20 text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-white/10 transition-all duration-300'
+                            class='inline-block border border-white/20 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-white/10 transition-all duration-300'
                         >
                             View Pricing
                         </a>

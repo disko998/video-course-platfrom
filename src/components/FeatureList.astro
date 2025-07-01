@@ -3,41 +3,141 @@ import CTAButton from './CTAButton.astro';
 
 const features = [
     {
-        icon: `<svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="12" fill="white" fill-opacity="0.12"/><path d="M12 24l6-12 6 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-        title: 'Learn professional video editing:',
-        desc: 'Master Premiere Pro and After Effects to create stunning content that captivates and engages your audience.',
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-8 h-8">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5L8 21l4-7 4 7-4-16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        title: 'Master Professional Video Editing',
+        subtitle: 'Industry-Standard Skills',
+        desc: 'Learn Premiere Pro, After Effects, and advanced techniques used by top creators. Master color grading, motion graphics, and storytelling that captivates millions.',
+        badge: 'Most Popular'
     },
     {
-        icon: `<svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="12" fill="white" fill-opacity="0.12"/><path d="M18 12v12M12 18h12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>`,
-        title: 'Build your creator <br /> brand:',
-        desc: 'Grow your following and attract brands with content that showcases your unique editing style and creativity.',
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-8 h-8">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 14l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        title: 'Build Your Creator Brand',
+        subtitle: 'Stand Out & Get Noticed',
+        desc: 'Develop a unique visual style that attracts followers and brands. Learn personal branding strategies that turn viewers into loyal fans and collaborators.',
+        badge: 'Brand Focus'
     },
     {
-        icon: `<svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="12" fill="white" fill-opacity="0.12"/><path d="M12 24c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="16" r="4" stroke="white" stroke-width="2"/></svg>`,
-        title: 'Transform your passion into profit:',
-        desc: 'Develop a standout portfolio, gain insider strategies, and land high-paying collaborations with global brands.',
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-8 h-8">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 2v4M8 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        title: 'Transform Passion Into Profit',
+        subtitle: 'Monetization Mastery',
+        desc: 'Build a standout portfolio, master client communication, and land high-paying brand deals. Turn your editing skills into a thriving creative business.',
+        badge: 'Revenue Growth'
     },
 ];
 ---
 
-<section class='w-full py-12 bg-transparent'>
-    <div class='container max-w-screen-lg mx-auto'>
-        <div
-            class='flex flex-col md:flex-row gap-8 md:gap-6 justify-center items-stretch'
-        >
-            {
-                features.map(f => (
-                    <div class='flex-1 gap-4 text-left bg-white/5 border border-white/10 rounded-2xl p-7 flex flex-col items-center  shadow-sm'>
-                        <span set:html={f.icon} />
-                        <h4 class='w-full' set:html={f.title} />
-                        <p class='leading-6 '>{f.desc}</p>
-                    </div>
-                ))
-            }
+<section class='relative w-full py-20 bg-gradient-to-br from-[#0a0a0f] via-[#1a1f2e] to-[#0f1419] overflow-hidden'>
+    <!-- Background decorative elements -->
+    <div class='absolute top-20 left-10 w-72 h-72 bg-orange-500/8 rounded-full blur-3xl'></div>
+    <div class='absolute bottom-20 right-10 w-64 h-64 bg-yellow-500/6 rounded-full blur-3xl'></div>
+    <div class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-orange-500/4 to-yellow-500/4 rounded-full blur-3xl'></div>
+
+    <div class='container max-w-screen-xl mx-auto px-4 relative z-10'>
+        <!-- Section Header -->
+        <div class='text-center mb-16'>
+            <div class='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500/20 to-yellow-500/20 border border-orange-500/30 mb-6'>
+                <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 text-orange-400">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/>
+                </svg>
+                <span class='text-orange-400 text-sm font-medium'>Core Features</span>
+            </div>
+            <h2 class='text-4xl md:text-5xl font-bold text-white mb-4'>
+                Everything You Need to 
+                <span class='bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent'>
+                    Succeed
+                </span>
+            </h2>
+            <p class='text-xl text-white/70 max-w-2xl mx-auto'>
+                From beginner basics to advanced techniques, master every aspect of video editing and content creation
+            </p>
         </div>
 
-        <div class='flex justify-center mt-10'>
-            <CTAButton> Start Creating Now! </CTAButton>
+        <!-- Features Grid -->
+        <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16'>
+            {features.map((feature, index) => (
+                <div class='group relative'>
+                    <!-- Card -->
+                    <div class='relative h-full p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-orange-500/30 transition-all duration-500 hover:bg-white/8 hover:transform hover:scale-105'>
+                        <!-- Badge -->
+                        <div class='absolute -top-3 left-6'>
+                            <span class='px-3 py-1 text-xs font-medium bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-full shadow-lg'>
+                                {feature.badge}
+                            </span>
+                        </div>
+
+                        <!-- Icon -->
+                        <div class='w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500/20 to-yellow-500/20 border border-orange-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300'>
+                            <div class='text-orange-400 group-hover:text-yellow-400 transition-colors duration-300' set:html={feature.icon} />
+                        </div>
+
+                        <!-- Content -->
+                        <div class='space-y-4'>
+                            <div>
+                                <p class='text-orange-400/80 text-sm font-medium mb-2'>{feature.subtitle}</p>
+                                <h3 class='text-xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300'>
+                                    {feature.title}
+                                </h3>
+                            </div>
+                            <p class='text-white/70 leading-relaxed'>
+                                {feature.desc}
+                            </p>
+                        </div>
+
+                        <!-- Hover gradient overlay -->
+                        <div class='absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-500/5 to-yellow-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none'></div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <!-- CTA Section -->
+        <div class='text-center'>
+            <div class='inline-flex flex-col  items-center gap-6'>
+                <CTAButton>Start Your Journey Today</CTAButton>
+                <div class='flex items-center gap-2 text-white/60'>
+                    <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5">
+                        <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class='text-sm'>30-day money-back guarantee</span>
+                </div>
+            </div>
+            
+            <!-- Trust indicators -->
+            <div class='flex flex-wrap justify-center items-center gap-8 mt-8 pt-8 border-t border-white/10'>
+                <div class='flex items-center gap-2 text-white/50'>
+                    <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                    </svg>
+                    <span class='text-sm'>4.9/5 Rating</span>
+                </div>
+                <div class='flex items-center gap-2 text-white/50'>
+                    <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class='text-sm'>10,000+ Students</span>
+                </div>
+                <div class='flex items-center gap-2 text-white/50'>
+                    <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2"/>
+                        <polyline points="22,4 12,14.01 9,11.01" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class='text-sm'>Lifetime Access</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -50,9 +50,12 @@ const featuredTestimonial = testimonials.find(t => t.featured);
 const regularTestimonials = testimonials.filter(t => !t.featured);
 ---
 
-<section class="w-full py-24 relative overflow-hidden">
-    <!-- Background gradient -->
-    <div class="absolute inset-0 bg-gradient-to-br from-[#181e2a]/20 via-transparent to-[#232946]/20 pointer-events-none"></div>
+<section class="relative w-full py-24 bg-gradient-to-br from-[#0a0a0f] via-[#1a1f2e] to-[#0f1419] overflow-hidden">
+    <!-- Subtle Background Elements -->
+    <div class='absolute inset-0 opacity-10'>
+        <div class='absolute top-32 left-32 w-64 h-64 bg-white/5 rounded-full blur-3xl'></div>
+        <div class='absolute bottom-32 right-32 w-48 h-48 bg-white/3 rounded-full blur-3xl'></div>
+    </div>
     
     <div class="container max-w-screen-xl mx-auto px-4 relative z-10">
         <div class="text-center mb-16">

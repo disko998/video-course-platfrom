@@ -7,7 +7,23 @@ const { href = '#' } = Astro.props;
 
 <a
     href={href}
-    class='px-10 py-5 flex font-light items-center justify-center rounded-md w-[275px] lg:w-[467px] bg-primary text-white text-base lg:text-xl border-2 border-primary shadow-lg mb-10 tracking-wide transition-all duration-150 hover:bg-white hover:text-primary hover:border-primary hover:scale-105'
+    class='group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold text-lg rounded-full shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1'
 >
-    <slot />
+    <div
+        class='absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+    >
+    </div>
+    <span class='relative flex items-center'>
+        <slot />
+        <svg
+            class='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300'
+            fill='currentColor'
+            viewBox='0 0 20 20'
+        >
+            <path
+                fill-rule='evenodd'
+                d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                clip-rule='evenodd'></path>
+        </svg>
+    </span>
 </a>

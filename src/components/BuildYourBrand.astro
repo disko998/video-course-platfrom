@@ -1,0 +1,284 @@
+---
+import CTAButton from './CTAButton.astro';
+---
+
+<section
+    class='relative w-full py-24 bg-gradient-to-br from-[#0a0a0f] via-[#1a1f2e] to-[#0f1419] overflow-hidden'
+>
+    <!-- Subtle Background Elements -->
+    <div class='absolute inset-0 opacity-10'>
+        <div
+            class='absolute top-32 left-20 w-64 h-64 bg-white/5 rounded-full blur-3xl'
+        >
+        </div>
+        <div
+            class='absolute bottom-32 right-20 w-48 h-48 bg-white/3 rounded-full blur-3xl'
+        >
+        </div>
+    </div>
+
+    <div class='container max-w-screen-xl mx-auto px-4 relative z-10'>
+        <!-- Section Header -->
+        <div class='text-center mb-16'>
+            <div
+                class='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6'
+            >
+                <svg
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    class='w-4 h-4 text-white/70'
+                >
+                    <path
+                        d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'
+                        fill='currentColor'></path>
+                </svg>
+                <span class='text-white/70 text-sm font-medium'
+                    >Your Success Story</span
+                >
+            </div>
+
+            <h2
+                class='text-3xl md:text-4xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight'
+            >
+                Build Your Brand, Attract Big Names,
+                <br />
+                <span
+                    class='bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent'
+                >
+                    Live Your Dream
+                </span>
+            </h2>
+        </div>
+
+        <!-- Main Content -->
+        <div class='flex flex-col lg:flex-row items-center gap-12'>
+            <!-- Left: Visual -->
+            <div class='flex-1 flex justify-center'>
+                <div class='relative group'>
+                    <div class='relative overflow-hidden rounded-2xl'>
+                        <img
+                            src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
+                            alt='Successful Creator'
+                            class='w-80 h-96 object-cover transition-transform duration-500 group-hover:scale-105'
+                        />
+                        <!-- Subtle overlay -->
+                        <div
+                            class='absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent'
+                        >
+                        </div>
+                    </div>
+
+                    <!-- Success indicators -->
+                    <div
+                        class='absolute -bottom-4 -right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4'
+                    >
+                        <div class='flex items-center gap-2'>
+                            <div
+                                class='w-3 h-3 bg-green-400 rounded-full animate-pulse'
+                            >
+                            </div>
+                            <span class='text-white/80 text-sm font-medium'
+                                >In Demand</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class='flex-[1.5] space-y-6'>
+                <div
+                    class='bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8'
+                >
+                    <!-- Vision Section -->
+                    <div class='space-y-6'>
+                        <div class='flex items-start gap-4'>
+                            <div
+                                class='w-8 h-8 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 mt-1'
+                            >
+                                <svg
+                                    viewBox='0 0 24 24'
+                                    fill='none'
+                                    class='w-4 h-4 text-white/70'
+                                >
+                                    <path
+                                        d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'
+                                        stroke='currentColor'
+                                        stroke-width='2'></path>
+                                    <path
+                                        d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'
+                                        stroke='currentColor'
+                                        stroke-width='2'></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3
+                                    class='text-lg font-semibold text-white mb-3'
+                                >
+                                    Envision This:
+                                </h3>
+                                <p class='text-white/70 leading-relaxed'>
+                                    Your inbox fills with collaboration offers
+                                    from brands you've always admired. They're
+                                    reaching out because your content speaks
+                                    volumes about your skill and creativity.
+                                    You're no longer pitching—you're being
+                                    pursued.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class='flex items-start gap-4'>
+                            <div
+                                class='w-8 h-8 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 mt-1'
+                            >
+                                <svg
+                                    viewBox='0 0 24 24'
+                                    fill='none'
+                                    class='w-4 h-4 text-white/70'
+                                >
+                                    <path
+                                        d='M9 12l2 2 4-4'
+                                        stroke='currentColor'
+                                        stroke-width='2'
+                                        stroke-linecap='round'
+                                        stroke-linejoin='round'></path>
+                                    <path
+                                        d='M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3'
+                                        stroke='currentColor'
+                                        stroke-width='2'></path>
+                                    <path
+                                        d='M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3'
+                                        stroke='currentColor'
+                                        stroke-width='2'></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class='text-white/70 leading-relaxed'>
+                                    You confidently share your portfolio,
+                                    knowing it's a masterpiece of high-quality
+                                    projects that demonstrate your range and
+                                    expertise. Brands don't hesitate; they see
+                                    your value instantly.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Key Insight -->
+                        <div
+                            class='bg-white/5 border border-white/10 rounded-xl p-6 text-center'
+                        >
+                            <p class='text-xl font-semibold text-white italic'>
+                                "You're no longer just another creator."
+                            </p>
+                        </div>
+
+                        <div class='flex items-start gap-4'>
+                            <div
+                                class='w-8 h-8 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 mt-1'
+                            >
+                                <svg
+                                    viewBox='0 0 24 24'
+                                    fill='none'
+                                    class='w-4 h-4 text-white/70'
+                                >
+                                    <path
+                                        d='M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6'
+                                        stroke='currentColor'
+                                        stroke-width='2'></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class='text-white/70 leading-relaxed'>
+                                    You wake up every day with clarity, purpose,
+                                    and excitement. And most importantly, you're
+                                    doing what you love—on your terms.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class='flex items-start gap-4'>
+                            <div
+                                class='w-8 h-8 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 mt-1'
+                            >
+                                <svg
+                                    viewBox='0 0 24 24'
+                                    fill='none'
+                                    class='w-4 h-4 text-white/70'
+                                >
+                                    <path
+                                        d='M22 12h-4l-3 9L9 3l-3 9H2'
+                                        stroke='currentColor'
+                                        stroke-width='2'></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class='text-white/70 leading-relaxed'>
+                                    This isn't just wishful thinking—it's
+                                    exactly what happens when you have the right
+                                    tools, skills, and community behind you.
+                                    This journey begins right here.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class='text-center lg:text-left'>
+                    <CTAButton>Start Your Journey</CTAButton>
+
+                    <!-- Trust indicators -->
+                    <div
+                        class='flex flex-wrap justify-center lg:justify-start items-center gap-6 mt-6'
+                    >
+                        <div class='flex items-center gap-2 text-white/60'>
+                            <svg
+                                viewBox='0 0 24 24'
+                                fill='none'
+                                class='w-4 h-4 text-green-400'
+                            >
+                                <path
+                                    d='M22 11.08V12a10 10 0 1 1-5.93-9.14'
+                                    stroke='currentColor'
+                                    stroke-width='2'></path>
+                                <polyline
+                                    points='22,4 12,14.01 9,11.01'
+                                    stroke='currentColor'
+                                    stroke-width='2'></polyline>
+                            </svg>
+                            <span class='text-sm'>Proven Results</span>
+                        </div>
+                        <div class='flex items-center gap-2 text-white/60'>
+                            <svg
+                                viewBox='0 0 24 24'
+                                fill='none'
+                                class='w-4 h-4 text-blue-400'
+                            >
+                                <path
+                                    d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'
+                                    stroke='currentColor'
+                                    stroke-width='2'></path>
+                                <circle
+                                    cx='9'
+                                    cy='7'
+                                    r='4'
+                                    stroke='currentColor'
+                                    stroke-width='2'></circle>
+                                <path
+                                    d='M23 21v-2a4 4 0 0 0-3-3.87'
+                                    stroke='currentColor'
+                                    stroke-width='2'></path>
+                                <path
+                                    d='M16 3.13a4 4 0 0 1 0 7.75'
+                                    stroke='currentColor'
+                                    stroke-width='2'></path>
+                            </svg>
+                            <span class='text-sm'>Join 2,500+ Creators</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

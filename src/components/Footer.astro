@@ -43,27 +43,27 @@ const socialLinks: SocialLink[] = [
 ];
 
 const quickLinks: Link[] = [
-    { name: 'Home', url: '#' },
-    { name: 'Features', url: '#features' },
-    { name: 'Pricing', url: '#pricing' },
-    { name: 'Testimonials', url: '#testimonials' },
-    { name: 'FAQ', url: '#faq' },
+    { name: 'Home', url: '/#' },
+    { name: 'Features', url: '/#features' },
+    { name: 'Pricing', url: '/#pricing' },
+    { name: 'Testimonials', url: '/#testimonials' },
+    { name: 'FAQ', url: '/#faq' },
 ];
 
 const legalLinks: Link[] = [
     { name: 'Login', url: '/login' },
-    { name: 'Refund Policy', url: '/refund-policy' },
+    // { name: 'Refund Policy', url: '/refund-policy' },
     { name: 'Privacy Policy', url: '/privacy-policy' },
     { name: 'Terms & Conditions', url: '/terms-conditions' },
     { name: 'Contact', url: '/contact' },
 ];
 
 const supportLinks: Link[] = [
-    { name: 'Help Center', url: '/help' },
-    { name: 'Community', url: '/community' },
+    { name: 'Help Center', url: '#' },
+    { name: 'Community', url: '#' },
     { name: 'Live Chat', url: '#' },
-    { name: 'Tutorial Library', url: '/tutorials' },
-    { name: 'System Status', url: '/status' },
+    { name: 'Tutorial Library', url: '#' },
+    { name: 'System Status', url: '#' },
 ];
 ---
 
@@ -91,11 +91,11 @@ const supportLinks: Link[] = [
                     <div class='flex items-center mb-6'>
                         <img
                             src={logo.src}
-                            alt='Creators Club Logo'
+                            alt='Klub kreatora Logo'
                             class='w-12 h-12 mr-3'
                         />
                         <span class='text-2xl font-bold text-white'
-                            >Creators Club</span
+                            >Klub kreatora</span
                         >
                     </div>
                     <p
@@ -107,7 +107,7 @@ const supportLinks: Link[] = [
                     </p>
 
                     <!-- Newsletter Signup -->
-                    <div class='mb-6'>
+                    <!-- <div class='mb-6'>
                         <h4 class='text-white font-semibold mb-3'>
                             Stay Updated
                         </h4>
@@ -123,10 +123,10 @@ const supportLinks: Link[] = [
                                 Subscribe
                             </button>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Social Links -->
-                    <div>
+                    <!-- <div>
                         <h4 class='text-white font-semibold mb-4'>Follow Us</h4>
                         <div class='flex gap-4'>
                             {
@@ -142,6 +142,21 @@ const supportLinks: Link[] = [
                                     </a>
                                 ))
                             }
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Company Information -->
+                <div>
+                    <h4 class='text-white font-semibold mb-6'>Information</h4>
+                    <div class='text-white/70 space-y-2'>
+                        <p class='font-medium text-white'>
+                            High Ticket Creators LLC
+                        </p>
+                        <div class='text-sm'>
+                            <p>30 N Gould St Ste R</p>
+                            <p>Sheridan, WY 82801</p>
+                            <p>USA</p>
                         </div>
                     </div>
                 </div>
@@ -166,7 +181,7 @@ const supportLinks: Link[] = [
                 </div>
 
                 <!-- Support -->
-                <div>
+                <!-- <div>
                     <h4 class='text-white font-semibold mb-6'>Support</h4>
                     <ul class='space-y-3'>
                         {
@@ -182,7 +197,7 @@ const supportLinks: Link[] = [
                             ))
                         }
                     </ul>
-                </div>
+                </div> -->
 
                 <!-- Legal & Account -->
                 <div>
@@ -213,7 +228,7 @@ const supportLinks: Link[] = [
                 class='flex flex-col md:flex-row items-center justify-between gap-4'
             >
                 <div class='text-white/60 text-sm'>
-                    © {currentYear} Creators Club. All rights reserved.
+                    © {currentYear} Klub kreatora. All rights reserved.
                 </div>
 
                 <div class='flex items-center gap-6 text-sm'>
@@ -243,7 +258,7 @@ const supportLinks: Link[] = [
                                 d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z'
                             ></path>
                         </svg>
-                        <span>24/7 Support</span>
+                        <span>contact@klubkreatora.com</span>
                     </div>
                     <div class='text-white/40'>
                         Made by <a
@@ -251,7 +266,8 @@ const supportLinks: Link[] = [
                             target='_blank'
                             rel='noopener noreferrer'
                             class='text-white/60 hover:text-white transition-colors duration-300'
-                            >Bluestudio.rs</a>
+                            >Bluestudio.rs</a
+                        >
                     </div>
                 </div>
             </div>

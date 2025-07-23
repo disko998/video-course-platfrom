@@ -1,7 +1,7 @@
 ---
 import CTAButton from './CTAButton.astro';
 import VideoModal from './VideoModal.astro';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 ---
 
 <section
@@ -45,18 +45,15 @@ import logo from '../assets/logo.svg';
         <div class='flex items-center space-x-3 group'>
             <div class='relative'>
                 <div
-                    class='absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300'
+                    class='absolute inset-0 bg-gradient-to-r from-yellow-800 to-orange-900 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300'
                 >
                 </div>
                 <img
                     src={logo.src}
                     alt='Klub kreatora Logo'
-                    class='w-16 h-16 object-contain relative z-10 drop-shadow-2xl'
+                    class='w-auto h-40 object-contain relative z-10 drop-shadow-2xl'
                 />
             </div>
-            <span class='text-2xl font-bold text-white tracking-tight'
-                >Klub kreatora</span
-            >
         </div>
     </header>
 
@@ -180,7 +177,7 @@ import logo from '../assets/logo.svg';
         <div class='flex flex-col sm:flex-row gap-4 items-center'>
             <CTAButton href='/login'>Start Creating Now!</CTAButton>
 
-            <button
+            <!-- <button
                 id='watch-preview-btn'
                 class='group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105'
                 onclick='openVideoModal()'
@@ -198,6 +195,11 @@ import logo from '../assets/logo.svg';
                     </svg>
                     Watch Preview
                 </span>
+            </button> -->
+            <button
+                class='group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105'
+            >
+                <a href='/#pricing'>Pricing</a>
             </button>
         </div>
 
